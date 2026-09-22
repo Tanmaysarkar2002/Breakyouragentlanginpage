@@ -15,7 +15,7 @@ Short enough to hold at 88px on one or two lines.
 | # | Tagline | Why it works |
 | --- | --- | --- |
 | H1 | **Crash-test your AI agent.** | Current primary. The whole concept in four words, imperative, no jargon. Hard to beat. |
-| H2 | **`bya run` before they do.** | Puts the CLI in the headline, so the brand *is* the command. "They" is the attacker, implied not shouted. Best of the `bya` options. |
+| H2 | ~~**`bya run` before they do.**~~ | **Blocked 2026-09-22: there is no CLI.** The POC had one; the rewrite dropped it and `pyproject.toml` ships no console script. Do not use this, or any `bya <command>` copy, until a CLI actually exists. |
 | H3 | **Every agent breaks. Find out how.** | States a fact, then offers information. Reads as confidence, not threat. |
 | H4 | **Break it on purpose.** | The crash-test idea compressed to three words. Works on a sticker. |
 | H5 | **Your agent has bugs you haven't prompted yet.** | Existing alternate. The sharpest line in the set, but long for a hero. |
@@ -30,13 +30,15 @@ Short enough to hold at 88px on one or two lines.
 
 ## Final CTA
 
-- **Break it before it breaks in production.**  *(current, existing alternate — earns its place here rather than in the hero)*
+- **Find the failure point in the lab, not in production.**  *(current)*
+- ~~Break it before it breaks in production.~~  *(retired 2026-09-22: same rhetorical frame as the competitor headline, see below)*
 - See exactly where it breaks.
 - Get your score.
 
 ## Badge and README
 
 - `resilience | 87/100`  *(decided badge format; the site uses 68 as its illustrative value)*
+  **No badge endpoint exists yet**, so do not write copy that tells people to embed it in a README.
 - crash-tested with bya
 - `bya`-tested: 68/100
 
@@ -44,6 +46,26 @@ Short enough to hold at 88px on one or two lines.
 
 - Paste your agent's endpoint. Get a resilience score and the transcript behind every failure.
 - Self-serve red-teaming for AI agents. OWASP-mapped. Free tier at launch.  *(current)*
+
+## Off limits: the competitor collision  [added 2026-09-22]
+
+`enokilabs.ai` sells the same thing to the same buyer. Their H1 is **"Break your agent before
+attackers do."** Short phrases are not copyrightable, so this is not a copyright question. It is a
+trademark and confusion question, and it is live because our brand name *is* "break your agent".
+
+Rules that follow from it:
+
+- **Never use the frame "Break X before Y."** That is their headline's shape. The old closing CTA
+  "Break it before it breaks in production." was replaced with **"Find the failure point in the lab,
+  not in production."** on this basis.
+- Their step names are Connect / Attack / Find / Verify. Ours are **Aim / Impact / Teardown** and
+  should stay in the crash-test register rather than drifting back to generic security verbs.
+- Lean on the crash-test lab metaphor, which is ours and which they do not use: the calibration
+  roundel, impact point, sled, teardown, failure point, the lab.
+
+**Open, and the owner's call, not a writer's:** whether `breakyouragent` can ship as the brand at
+all given their headline. That needs a real trademark search (CLAUDE.md §9 already flags it) and
+probably a lawyer, before any money goes into the name.
 
 ## Rejected on purpose
 
