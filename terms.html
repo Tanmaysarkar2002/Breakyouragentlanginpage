@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of use: breakyouragent</title>
+<meta name="description" content="Terms of use for breakyouragent. You may only test agents you own or are authorized to test.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0E0E0C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Terms of use: breakyouragent">
+<meta property="og:url" content="https://breakyouragent.com/terms.html">
+<meta property="og:image" content="https://breakyouragent.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://breakyouragent.com/terms.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="legal.css">
+</head>
+<body>
+<div class="stripe"></div>
+<header><div class="wrap nav">
+  <a class="logo" href="index.html" aria-label="breakyouragent home">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="2" y="2" width="24" height="24" stroke="#F5C400" stroke-width="2.5"/><path d="M14 2 L11 11 L17 15 L13 26" stroke="#F5C400" stroke-width="2.5" stroke-linejoin="bevel"/></svg>
+    breakyouragent</a>
+  <a class="back" href="index.html">&larr; Back to home</a>
+</div></header>
+
+<main><div class="wrap">
+  <h1>Terms of use</h1>
+  <p class="updated">Draft &middot; not yet in force &middot; last edited 22 September 2026</p>
+
+  <span class="todo">[TODO: legal review before publishing. This document is written from the project's own security decisions, not by a lawyer.]</span>
+
+  <p class="lede">breakyouragent attacks AI agents on purpose. That only works if everyone using it points it at systems they are allowed to break.</p>
+
+  <div class="box warn">
+    <p><strong>The one rule that matters.</strong> You may only test an agent you own, or one you have explicit written authorization to test. Pointing this tool at somebody else's endpoint without permission is unauthorized access, and in most jurisdictions it is a crime. We will terminate accounts that do it and cooperate with lawful requests about it.</p>
+  </div>
+
+  <h2>1. What these terms cover</h2>
+  <p>Today this site is a pre-launch waitlist, and the engine is a command-line tool you run yourself. Sections 2 and 3 apply now. Sections 4 to 9 describe the hosted service and take effect when it launches.</p>
+  <span class="todo">[TODO: operating legal entity, registered address, and contact for legal notices.]</span>
+  <span class="todo">[TODO: governing law and venue for disputes.]</span>
+
+  <h2>2. The waitlist <span class="tag live">Live now</span></h2>
+  <p>If you give us your email address, we use it for one thing: to tell you when breakyouragent opens and to send you a launch-day run. We do not sell it, rent it, or pass it to advertisers. Reply to any message, or write to the address in section 9, and we delete it.</p>
+  <span class="todo">[TODO: link a privacy policy. One does not exist yet and is required before collecting emails in the EU or UK.]</span>
+
+  <h2>3. The engine and attack pack <span class="tag live">Live now</span></h2>
+  <p>When you run the engine yourself, you are the operator: you choose the target, you hold the API keys, and you are responsible for the traffic you send.</p>
+  <ul>
+    <li>The attack pack tests <strong>behaviour</strong>. It uses benign off-policy requests, canary tokens and fake tool names.</li>
+    <li>It contains no real harmful payloads, and we reject contributions that add them: no weapons, malware, CSAM, self-harm content or working exploits.</li>
+    <li>Scenarios are tagged with OWASP LLM and Agentic Top 10 identifiers so results line up with the vocabulary your security team already uses.</li>
+  </ul>
+  <span class="todo">[TODO: the licence for the engine is an open decision. No LICENSE file has been chosen, so no rights to copy, modify or redistribute it have been granted. Decide this before describing the project as open source anywhere.]</span>
+
+  <h2>4. Proving you own the endpoint <span class="tag planned">At launch</span></h2>
+  <p>Before the hosted service runs a full suite against a URL, you will have to prove you control it, by one of:</p>
+  <ul>
+    <li>serving a token at <code>/.well-known/breakyouragent.txt</code></li>
+    <li>a DNS TXT record of <code>breakyouragent-verify=&lt;token&gt;</code></li>
+    <li>echoing an <code>X-BYA-Challenge</code> header back to us</li>
+  </ul>
+  <p>An unverified endpoint gets a three-prompt harmless connectivity check and nothing more.</p>
+
+  <h2>5. Limits <span class="tag planned">At launch</span></h2>
+  <p>Limits exist to protect your infrastructure as much as ours. Planned free-tier values:</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Limit</th><th>Free tier</th></tr></thead>
+    <tbody>
+      <tr><td>Runs per day</td><td>3</td></tr>
+      <tr><td>Concurrent requests to your agent</td><td>2</td></tr>
+      <tr><td>Model tokens per run</td><td>1,000,000</td></tr>
+      <tr><td>Request timeout</td><td>30 seconds</td></tr>
+      <tr><td>Maximum response size we read</td><td>256 KB</td></tr>
+    </tbody>
+  </table></div>
+  <p>Do not try to route our traffic through the service at systems you do not control, and do not use it to load-test a third party. That is abuse, not testing.</p>
+  <span class="todo">[TODO: paid plan pricing and limits are an open decision. Do not publish numbers for them.]</span>
+
+  <h2>6. Your data <span class="tag planned">At launch</span></h2>
+  <ul>
+    <li><strong>Transcripts</strong> are kept 30 days by default, with one-click delete.</li>
+    <li><strong>Your API keys</strong> are encrypted at rest, never returned to a browser, and scrubbed from logs and transcripts.</li>
+    <li>We will not send your transcripts to a model provider whose free tier trains on submitted data.</li>
+  </ul>
+
+  <h2>7. What we do not promise</h2>
+  <p>A good score is evidence, not a guarantee. We test the scenarios in the pack, on the day you run them, against the agent as configured at that moment. A passing run does not mean your agent is secure, and it is not a certification, an audit, or a substitute for a human security review. Change your prompt, your tools or your model, and the result no longer describes your system.</p>
+  <p>Reports for demo agents shown on this site use illustrative values.</p>
+  <span class="todo">[TODO: warranty disclaimer, limitation of liability, and indemnity clauses. These need a lawyer, not a developer.]</span>
+
+  <h2>8. Suspension</h2>
+  <p>We may suspend or remove an account that tests endpoints it does not own, tries to bypass verification or the egress guard, attacks our own infrastructure, or uses the service to harm a third party. Where we can, we will tell you why.</p>
+
+  <h2>9. Contact</h2>
+  <p>Security issues: <a href="mailto:security@breakyouragent.com">security@breakyouragent.com</a>. Everything else: <span class="todo" style="display:inline-block;margin:0">[TODO: general contact address]</span></p>
+</div></main>
+
+<footer><div class="wrap">
+  <span class="logo" style="font-size:18px">breakyouragent</span>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+  <p class="legal">Only test agents you own or are authorized to test. &copy; 2026 breakyouragent.</p>
+</div></footer>
+<div class="stripe"></div>
+</body>
+</html>

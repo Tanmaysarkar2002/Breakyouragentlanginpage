@@ -1,0 +1,69 @@
+:root{--bg:#0E0E0C;--panel:#16161A;--line:#2A2925;--line2:#3A3833;--text:#F2EFE6;--muted:#C9C5BA;--dim:#A09C92;--accent:#F5C400;--broke:#FF6B6B;--ok:#3DD68C;
+--sans:'Space Grotesk',ui-sans-serif,system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased;line-height:1.6}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.stripe{height:8px;background:repeating-linear-gradient(135deg,var(--accent) 0 14px,var(--bg) 14px 28px)}
+.wrap{max-width:760px;margin:0 auto;padding-inline:24px}
+header{border-bottom:1px solid var(--line)}
+.nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-block:16px}
+.logo{display:flex;align-items:center;min-height:44px;gap:12px;font:700 20px var(--mono);letter-spacing:-.5px;color:var(--text)}
+.logo:hover{text-decoration:none;color:var(--accent)}
+.back{display:inline-flex;align-items:center;min-height:44px;font:15px var(--sans);font-weight:500}
+main{padding-block:64px 96px}
+h1{font-size:clamp(36px,6vw,56px);line-height:1.05;letter-spacing:-1.5px;margin:0 0 12px}
+.updated{font:13px var(--mono);color:var(--dim);margin:0 0 40px}
+h2{font-size:clamp(22px,3vw,28px);line-height:1.2;letter-spacing:-.5px;margin:48px 0 14px;padding-top:24px;border-top:1px solid var(--line)}
+h2:first-of-type{border-top:0;padding-top:0;margin-top:0}
+h3{font-size:18px;margin:28px 0 8px}
+p,li{color:var(--muted);font-size:17px;margin:0 0 14px}
+ul{padding-left:22px;margin:0 0 18px}li{margin-bottom:8px}
+strong{color:var(--text);font-weight:600}
+code{font:14px var(--mono);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:1px 6px;color:var(--text);overflow-wrap:break-word}
+.lede{font-size:20px;color:var(--text);margin-bottom:36px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:24px;margin:0 0 24px}
+.box p:last-child,.box ul:last-child{margin-bottom:0}
+.box.warn{border-color:#5A2A2E;background:#1A1315}
+.box.warn strong{color:#F2B8B8}
+.tag{display:inline-block;font:11px var(--mono);letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:3px;vertical-align:middle;margin-left:8px;white-space:nowrap}
+.tag.live{background:#14301F;color:var(--ok);border:1px solid #27543A}
+.tag.planned{background:#332B10;color:var(--accent);border:1px solid #5C4D16}
+.todo{font:14px var(--mono);color:var(--accent);background:#221B08;border:1px dashed #5C4D16;border-radius:4px;padding:10px 12px;display:block;margin:0 0 16px;overflow-wrap:break-word}
+table{width:100%;border-collapse:collapse;font-size:16px;margin:0 0 24px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);color:var(--muted)}
+th{color:var(--text);font:13px var(--mono);letter-spacing:.5px;text-transform:uppercase}
+td:first-child{color:var(--text)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.scroll>table{min-width:100%;width:auto;margin-bottom:0}
+td code{overflow-wrap:anywhere}
+p a,li a{overflow-wrap:anywhere}
+footer nav a{overflow-wrap:anywhere}
+footer{border-top:1px solid var(--line);padding-block:44px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
+footer nav{display:flex;flex-wrap:wrap;gap:4px 28px}
+footer nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--muted);font-size:15px}
+.legal{width:100%;font-size:14px;color:var(--dim);margin:0}
+@media (max-width:640px){main{padding-block:44px 64px}h2{margin-top:36px}}
+@media (max-width:420px){table{font-size:14px}th,td{padding:8px 10px}.scroll{margin-bottom:24px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Terms is a legal document: people print it and save it as PDF. On paper the dark theme
+   wastes ink and the link targets vanish, so print gets an inverted, quieter treatment. */
+@media print{
+  :root{--bg:#fff;--panel:#fff;--line:#bbb;--line2:#999;--text:#000;--muted:#1a1a1a;--dim:#444;--accent:#000}
+  body{background:#fff;color:#000;line-height:1.45}
+  .stripe,.back,footer nav{display:none}
+  .wrap{max-width:none;padding-inline:0}
+  main{padding-block:0}
+  a{color:#000;text-decoration:underline}
+  a[href^="http"]::after,a[href^="mailto"]::after{content:" (" attr(href) ")";font-size:10px;color:#444;word-break:break-all}
+  .box,.box.warn,.todo,code,table{background:#fff;border-color:#bbb}
+  .box.warn strong{color:#000}
+  .todo{color:#000;border-style:dashed}
+  .tag,.tag.live,.tag.planned{background:#fff;color:#000;border:1px solid #666}
+  h1{font-size:26pt}h2{font-size:14pt;break-after:avoid}h3{break-after:avoid}
+  p,li,td,th{font-size:10.5pt}
+  table,.box,.todo{break-inside:avoid}
+  .legal{color:#000}
+}
