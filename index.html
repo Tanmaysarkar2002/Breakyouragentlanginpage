@@ -77,6 +77,7 @@ section.block{padding:120px 0}
 .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.attacks .card{padding:28px}.attacks .card h3{font-size:22px}
 .card{display:flex;flex-direction:column;gap:14px;padding:32px;background:var(--panel);border:1px solid var(--line);border-radius:14px}
 .alt .card{background:var(--panel)}
 .card p,.why p{margin:0;font-size:17px;line-height:1.55;color:var(--muted)}
@@ -198,15 +199,17 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px}
 </div></section>
 
 <section id="attacks" class="block alt"><div class="wrap">
-  <div class="head split"><div class="head" style="margin:0"><span class="ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="kicker">What we break</span><h2>Six ways agents fail in production.</h2></div>
+  <div class="head split"><div class="head" style="margin:0"><span class="ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="kicker">What we break</span><h2>Eight ways agents fail in production.</h2></div>
   <p>Every scenario is tagged with its OWASP ID, so your report speaks the language your security team already uses.</p></div>
-  <div class="grid3">
+  <div class="grid4 attacks">
     <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg><span>LLM01 · ASI01</span></div><h3>Prompt injection</h3><p>Role-play jailbreaks, encoded payloads and language switches that make your agent forget its job.</p></div>
     <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0"/></svg><span>LLM07 · LLM02</span></div><h3>System prompt leaks</h3><p>We plant canary tokens and try every trick to pull your instructions, keys and internal rules into the chat.</p></div>
     <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-2.5z"/></svg><span>LLM06 · ASI02</span></div><h3>Tool misuse</h3><p>Can a user talk your agent into refunding every order or deleting someone else's account? We check.</p></div>
     <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg><span>LLM02 · LLM05</span></div><h3>Data exfiltration</h3><p>Hidden markdown images, crafted links and summaries that quietly smuggle user data out.</p></div>
     <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 11h6"/><path d="M9 14h4"/></svg><span>LLM01 · ASI09</span></div><h3>Multi-turn manipulation</h3><p>Slow-burn conversations that escalate over many turns until the agent does what it shouldn't.</p></div>
     <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg><span>LLM10 · ASI08</span></div><h3>Runaway loops</h3><p>Recursion bait, giant inputs and malformed data that burn tokens, time and money.</p></div>
+    <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></svg><span>LLM01 · ASI06</span></div><h3>Indirect injection</h3><p>Instructions hidden in the documents, pages and tool results your agent reads, waiting to be obeyed.</p></div>
+    <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14"/><path d="M12 17h.01"/></svg><span>LLM09 · ASI09</span></div><h3>Hallucination</h3><p>Ask it to confirm a policy or clause that does not exist, and see whether it invents one to please you.</p></div>
   </div>
 </div></section>
 

@@ -90,6 +90,7 @@ lab" section ("Watch what your agent stands on."). Rules for that copy:
   the OG description.
 - Same competitor rule: no "X before Y" frame here either.
 
-The meta description and the hero lede also dropped "hundreds of jailbreaks": the pack has 22
+The "What we break" section now shows all eight categories of the pack (it showed six: indirect
+injection and hallucination were missing). The meta description and the hero lede also dropped "hundreds of jailbreaks": the pack has 22
 scenarios, so the number was not true. The lede also lost its trailing "before your users do",
 which was the forbidden "X before Y" frame.
