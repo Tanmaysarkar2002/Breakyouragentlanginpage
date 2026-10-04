@@ -90,5 +90,6 @@ lab" section ("Watch what your agent stands on."). Rules for that copy:
   the OG description.
 - Same competitor rule: no "X before Y" frame here either.
 
-The meta description also dropped "hundreds of jailbreaks": the pack has 22 scenarios, so the
-number was not true.
+The meta description and the hero lede also dropped "hundreds of jailbreaks": the pack has 22
+scenarios, so the number was not true. The lede also lost its trailing "before your users do",
+which was the forbidden "X before Y" frame.
