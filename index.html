@@ -48,6 +48,7 @@ h1{font-size:clamp(52px,7vw,88px);line-height:.95;letter-spacing:-3px;margin:24p
 h2{font-size:clamp(36px,4.2vw,56px);line-height:1.05;letter-spacing:-1.5px;margin:0}
 h3{margin:0}
 .lede{font-size:20px;line-height:1.5;color:var(--muted);max-width:560px;margin:0 0 28px}
+.beyond{margin:-12px 0 28px;max-width:560px;font-size:16px;line-height:1.5;color:var(--muted)}.beyond a{color:var(--text);text-decoration:underline;text-decoration-color:var(--impact);text-underline-offset:3px}
 .kicker{font:13px var(--mono);letter-spacing:2px;text-transform:uppercase;color:var(--dim)}
 .head .ticks{margin-bottom:0}
 form label{display:block;font-size:14px;font-weight:500;color:var(--muted);margin-bottom:8px}
@@ -154,7 +155,7 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px}
   <a class="logo" href="#top" aria-label="breakyouragent home">
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="2" y="2" width="24" height="24" stroke="#F5C400" stroke-width="2.5"/><path d="M14 2 L11 11 L17 15 L13 26" stroke="#F5C400" stroke-width="2.5" stroke-linejoin="bevel"/></svg>
     breakyouragent</a>
-  <nav><a href="#how">How it works</a><a href="#attacks">Attacks</a><a href="#report">Sample report</a><a href="#lab">The lab</a><a class="btn" href="#waitlist">Join waitlist</a></nav>
+  <nav><a href="#how">How it works</a><a href="#attacks">Attacks</a><a href="#report">Sample report</a><a href="#lab">Beyond the agent</a><a class="btn" href="#waitlist">Join waitlist</a></nav>
 </div></header>
 
 <main id="top">
@@ -164,6 +165,7 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px}
     <span class="pill"><i></i>Early access: the crash-test lab for AI agents</span>
     <h1>Crash-test<br>your AI agent.</h1>
     <p class="lede">Paste your agent's endpoint. We fire OWASP-mapped prompt injections, data-leak and tool-abuse attacks at it, then show you exactly where it breaks.</p>
+    <p class="beyond">Don't stop at the agent: <a href="#lab">monitor what it runs on and map your attack surface</a>, in the same lab.</p>
     <form class="waitlist" action="#" method="post" novalidate data-source="hero">
       <label for="email-hero">Work email</label>
       <div class="row"><input id="email-hero" name="email" type="email" required autocomplete="email" placeholder="you@company.com"><input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="btn btn-accent" type="submit">Get early access</button></div>
@@ -247,13 +249,13 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px}
 </div></section>
 
 <section id="lab" class="block"><div class="wrap">
-  <div class="head split"><div class="head" style="margin:0"><span class="ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="kicker">Also in the lab</span><h2>Watch what your agent stands on.</h2></div>
-  <p>An agent is only as steady as the APIs and databases behind it. Same account, same alerts, two more instruments.</p></div>
+  <div class="head split"><div class="head" style="margin:0"><span class="ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="kicker">Beyond the agent</span><h2>Don't stop at the agent.</h2></div>
+  <p>An agent is only as steady as the APIs and databases behind it, and only as safe as what it exposes. Monitor them and map your attack surface: same account, same alerts.</p></div>
   <div class="grid2">
     <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg><span>HTTP · Postgres · MySQL · Redis</span></div><h3>Monitoring</h3>
       <p>Uptime checks for the endpoints your agent calls. Database health read from the server's own statistics: active and slow queries, lock contention, dead tuples, replication slots, wraparound.</p>
       <p>Alert rules on any metric post to Slack or a signed webhook. Probes connect as a read-only monitoring user and write nothing.</p></div>
-    <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6-6"/></svg><span>Passive first</span></div><h3>Recon</h3>
+    <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6-6"/></svg><span>ASM · passive first</span></div><h3>Attack surface</h3>
       <p>The subdomains and links of your domain, from certificate transparency logs and web archives. Nothing touches your servers.</p>
       <p>Prove you own the domain and the lab also crawls it and probes each host for its status code and title.</p></div>
   </div>

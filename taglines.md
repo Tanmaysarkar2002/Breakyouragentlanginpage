@@ -83,7 +83,10 @@ The product now also has monitoring (HTTP uptime; Postgres, MySQL/MariaDB and Re
 and recon (passive subdomains and links; crawl after domain proof), folded in from the owner's
 Sentinel and ReconX projects. **The business tagline stays agent-first**, as the name says: the hero
 is still "Crash-test your AI agent." and the new features sit lower on the page in an "Also in the
-lab" section ("Watch what your agent stands on."). Rules for that copy:
+lab" section, now headed **"Don't stop at the agent."** (owner, 2026-10-04: the secondary tagline says
+the product goes beyond agent testing into monitoring and attack-surface mapping). The same line
+sits under the hero lede: "Don't stop at the agent: monitor what it runs on and map your attack
+surface, in the same lab." The hero H1 itself stays "Crash-test your AI agent." Rules for that copy:
 
 - Name only what exists. No uptime percentages, customer counts or speed claims.
 - Monitoring and recon support the agent story; they never replace it in the hero, the eyebrow or
