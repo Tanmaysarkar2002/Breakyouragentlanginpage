@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>breakyouragent: crash-test your AI agent</title>
-<meta name="description" content="Paste your agent's endpoint. We throw hundreds of jailbreaks, prompt injections and tool-abuse attacks at it and show you exactly where it breaks.">
+<meta name="description" content="Crash-test your AI agent. Paste its endpoint; we fire OWASP-mapped prompt injection, data-leak and tool-abuse attacks at it and show you exactly where it breaks. Uptime, database monitoring and recon in the same lab.">
 <meta property="og:title" content="breakyouragent: crash-test your AI agent">
 <meta property="og:description" content="Self-serve red-teaming for AI agents. OWASP-mapped. Free tier at launch.">
 <meta name="theme-color" content="#EDEDEA">
@@ -48,6 +48,7 @@ h1{font-size:clamp(52px,7vw,88px);line-height:.95;letter-spacing:-3px;margin:24p
 h2{font-size:clamp(36px,4.2vw,56px);line-height:1.05;letter-spacing:-1.5px;margin:0}
 h3{margin:0}
 .lede{font-size:20px;line-height:1.5;color:var(--muted);max-width:560px;margin:0 0 28px}
+.beyond{margin:-12px 0 28px;max-width:560px;font-size:16px;line-height:1.5;color:var(--muted)}.beyond a{color:var(--text);text-decoration:underline;text-decoration-color:var(--impact);text-underline-offset:3px}
 .kicker{font:13px var(--mono);letter-spacing:2px;text-transform:uppercase;color:var(--dim)}
 .head .ticks{margin-bottom:0}
 form label{display:block;font-size:14px;font-weight:500;color:var(--muted);margin-bottom:8px}
@@ -75,7 +76,9 @@ section.block{padding:120px 0}
 .head.split{flex-direction:row;justify-content:space-between;align-items:flex-end;gap:48px}
 .head.split p{max-width:420px;margin:0;font-size:18px;line-height:1.55;color:var(--muted)}
 .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.attacks .card{padding:28px}.attacks .card h3{font-size:22px}
 .card{display:flex;flex-direction:column;gap:14px;padding:32px;background:var(--panel);border:1px solid var(--line);border-radius:14px}
 .alt .card{background:var(--panel)}
 .card p,.why p{margin:0;font-size:17px;line-height:1.55;color:var(--muted)}
@@ -141,7 +144,7 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px}
 }
 @media (max-width:1000px){.hero,.report{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}.grid4{grid-template-columns:1fr 1fr}.head.split{flex-direction:column;align-items:flex-start}}
 @media (max-width:1000px){.hero-bleed::before{width:520px;right:-180px}}
-@media (max-width:640px){.hero-bleed::before{display:none}.cta{margin-block:72px;padding:64px 20px;border-radius:18px}.nav{flex-wrap:wrap;min-height:0;padding-block:16px;gap:12px}.nav nav{order:3;width:100%;gap:4px 20px;flex-wrap:wrap;font-size:15px}.nav nav a:not(.btn){display:inline-flex;align-items:center;min-height:44px}.nav nav a.btn{margin-left:auto;min-height:44px;padding:0 18px}.grid3,.grid4{grid-template-columns:1fr}.row{flex-direction:column}.gauge-row{flex-direction:column;align-items:stretch}.gauge{align-self:center}section.block{padding:80px 0}.hero{padding-block:64px}.panel{padding:24px}.term{font-size:13px}.term-body{padding:18px 16px}.line{flex-wrap:wrap;gap:2px 16px}}
+@media (max-width:640px){.hero-bleed::before{display:none}.cta{margin-block:72px;padding:64px 20px;border-radius:18px}.nav{flex-wrap:wrap;min-height:0;padding-block:16px;gap:12px}.nav nav{order:3;width:100%;gap:4px 20px;flex-wrap:wrap;font-size:15px}.nav nav a:not(.btn){display:inline-flex;align-items:center;min-height:44px}.nav nav a.btn{margin-left:auto;min-height:44px;padding:0 18px}.grid2,.grid3,.grid4{grid-template-columns:1fr}.row{flex-direction:column}.gauge-row{flex-direction:column;align-items:stretch}.gauge{align-self:center}section.block{padding:80px 0}.hero{padding-block:64px}.panel{padding:24px}.term{font-size:13px}.term-body{padding:18px 16px}.line{flex-wrap:wrap;gap:2px 16px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -152,7 +155,7 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px}
   <a class="logo" href="#top" aria-label="breakyouragent home">
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="2" y="2" width="24" height="24" stroke="#F5C400" stroke-width="2.5"/><path d="M14 2 L11 11 L17 15 L13 26" stroke="#F5C400" stroke-width="2.5" stroke-linejoin="bevel"/></svg>
     breakyouragent</a>
-  <nav><a href="#how">How it works</a><a href="#attacks">Attacks</a><a href="#report">Sample report</a><a class="btn" href="#waitlist">Join waitlist</a></nav>
+  <nav><a href="#how">How it works</a><a href="#attacks">Attacks</a><a href="#report">Sample report</a><a href="#lab">Beyond the agent</a><a class="btn" href="#waitlist">Join waitlist</a></nav>
 </div></header>
 
 <main id="top">
@@ -161,7 +164,8 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px}
   <div>
     <span class="pill"><i></i>Early access: the crash-test lab for AI agents</span>
     <h1>Crash-test<br>your AI agent.</h1>
-    <p class="lede">Paste your agent's endpoint. We throw hundreds of jailbreaks, prompt injections and tool-abuse attacks at it, then show you exactly where it breaks, before your users do.</p>
+    <p class="lede">Paste your agent's endpoint. We fire OWASP-mapped prompt injections, data-leak and tool-abuse attacks at it, then show you exactly where it breaks.</p>
+    <p class="beyond">Don't stop at the agent: <a href="#lab">monitor what it runs on and map your attack surface</a>, in the same lab.</p>
     <form class="waitlist" action="#" method="post" novalidate data-source="hero">
       <label for="email-hero">Work email</label>
       <div class="row"><input id="email-hero" name="email" type="email" required autocomplete="email" placeholder="you@company.com"><input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="btn btn-accent" type="submit">Get early access</button></div>
@@ -197,15 +201,17 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px}
 </div></section>
 
 <section id="attacks" class="block alt"><div class="wrap">
-  <div class="head split"><div class="head" style="margin:0"><span class="ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="kicker">What we break</span><h2>Six ways agents fail in production.</h2></div>
+  <div class="head split"><div class="head" style="margin:0"><span class="ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="kicker">What we break</span><h2>Eight ways agents fail in production.</h2></div>
   <p>Every scenario is tagged with its OWASP ID, so your report speaks the language your security team already uses.</p></div>
-  <div class="grid3">
+  <div class="grid4 attacks">
     <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg><span>LLM01 · ASI01</span></div><h3>Prompt injection</h3><p>Role-play jailbreaks, encoded payloads and language switches that make your agent forget its job.</p></div>
     <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0"/></svg><span>LLM07 · LLM02</span></div><h3>System prompt leaks</h3><p>We plant canary tokens and try every trick to pull your instructions, keys and internal rules into the chat.</p></div>
     <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-2.5z"/></svg><span>LLM06 · ASI02</span></div><h3>Tool misuse</h3><p>Can a user talk your agent into refunding every order or deleting someone else's account? We check.</p></div>
     <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg><span>LLM02 · LLM05</span></div><h3>Data exfiltration</h3><p>Hidden markdown images, crafted links and summaries that quietly smuggle user data out.</p></div>
     <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 11h6"/><path d="M9 14h4"/></svg><span>LLM01 · ASI09</span></div><h3>Multi-turn manipulation</h3><p>Slow-burn conversations that escalate over many turns until the agent does what it shouldn't.</p></div>
     <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg><span>LLM10 · ASI08</span></div><h3>Runaway loops</h3><p>Recursion bait, giant inputs and malformed data that burn tokens, time and money.</p></div>
+    <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></svg><span>LLM01 · ASI06</span></div><h3>Indirect injection</h3><p>Instructions hidden in the documents, pages and tool results your agent reads, waiting to be obeyed.</p></div>
+    <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14"/><path d="M12 17h.01"/></svg><span>LLM09 · ASI09</span></div><h3>Hallucination</h3><p>Ask it to confirm a policy or clause that does not exist, and see whether it invents one to please you.</p></div>
   </div>
 </div></section>
 
@@ -239,6 +245,19 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px}
     <div class="why"><h3>Neutral by design</h3><p>Not owned by a model lab or a firewall vendor. We test every stack the same way.</p></div>
     <div class="why"><h3>CI-ready</h3><p>One authenticated API call starts a run. Read the score back and fail the build when it drops.</p></div>
     <div class="why"><h3>Readable attack pack</h3><p>Every scenario is plain, OWASP-tagged YAML. You can see exactly what we sent your agent.</p></div>
+  </div>
+</div></section>
+
+<section id="lab" class="block"><div class="wrap">
+  <div class="head split"><div class="head" style="margin:0"><span class="ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="kicker">Beyond the agent</span><h2>Don't stop at the agent.</h2></div>
+  <p>An agent is only as steady as the APIs and databases behind it, and only as safe as what it exposes. Monitor them and map your attack surface: same account, same alerts.</p></div>
+  <div class="grid2">
+    <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg><span>HTTP · Postgres · MySQL · Redis</span></div><h3>Monitoring</h3>
+      <p>Uptime checks for the endpoints your agent calls. Database health read from the server's own statistics: active and slow queries, lock contention, dead tuples, replication slots, wraparound.</p>
+      <p>Alert rules on any metric post to Slack or a signed webhook. Probes connect as a read-only monitoring user and write nothing.</p></div>
+    <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6-6"/></svg><span>ASM · passive first</span></div><h3>Attack surface</h3>
+      <p>The subdomains and links of your domain, from certificate transparency logs and web archives. Nothing touches your servers.</p>
+      <p>Prove you own the domain and the lab also crawls it and probes each host for its status code and title.</p></div>
   </div>
 </div></section>
 

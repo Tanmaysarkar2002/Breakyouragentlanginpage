@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Not found: breakyouragent</title>
+<meta name="description" content="This page does not exist.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#EDEDEA">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Cloudflare Pages serves this file for any unknown path, at that path: every URL here is root-absolute. -->
+<link rel="stylesheet" href="/legal.css">
+<style>
+  .lost{display:grid;place-items:center;min-height:calc(100dvh - 160px);padding:48px 0}
+  .island{position:relative;overflow:hidden;width:100%;max-width:720px;padding:48px 40px;border-radius:18px;background:var(--ink);color:#F2F1EC}
+  .island svg.roundel{position:absolute;top:-48px;right:-48px;width:200px;height:200px;opacity:.85}
+  .island .code{margin:0;font:700 clamp(72px,14vw,112px)/1 var(--mono);color:var(--accent);letter-spacing:-2px}
+  .ticks{display:flex;gap:3px;align-items:flex-end;height:10px;margin-top:28px}
+  .ticks i{display:block;width:1px;height:6px;background:#C62F22}.ticks i:nth-child(3n+1){height:10px}
+  .kick{display:block;margin-top:8px;font:13px var(--mono);letter-spacing:2px;text-transform:uppercase;color:#A3A197}
+  .island h1{margin:12px 0 0;font:600 clamp(26px,4vw,34px)/1.15 var(--sans);color:#F2F1EC;max-width:440px}
+  .island p{margin:12px 0 0;max-width:460px;color:#C9C7BE;font-size:17px;line-height:1.55}
+  .island code{font-family:var(--mono);color:#F2F1EC;background:none;border:0;padding:0;word-break:break-all}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .actions a{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:8px;font:600 16px var(--sans);text-decoration:none}
+  .actions .primary{background:var(--accent);color:var(--ink)}
+  .actions .ghost{border:1px solid #3A3934;color:#F2F1EC}
+  .actions a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  @media (max-width:640px){.island{padding:36px 22px}.island svg.roundel{width:140px;height:140px;top:-36px;right:-36px}}
+</style>
+</head>
+<body>
+<div class="stripe"></div>
+<header><div class="wrap nav">
+  <a class="logo" href="/" aria-label="breakyouragent home">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="2" y="2" width="24" height="24" stroke="#F5C400" stroke-width="2.5"/><path d="M14 2 L11 11 L17 15 L13 26" stroke="#F5C400" stroke-width="2.5" stroke-linejoin="bevel"/></svg>
+    breakyouragent</a>
+  <a class="back" href="/">&larr; Back to home</a>
+</div></header>
+
+<main><div class="wrap lost">
+  <section class="island">
+    <svg class="roundel" viewBox="0 0 120 120" aria-hidden="true">
+      <circle cx="60" cy="60" r="58" fill="#F5C400"/>
+      <path d="M60 2 A58 58 0 0 1 118 60 L60 60 Z" fill="#0E0E0C"/>
+      <path d="M60 118 A58 58 0 0 1 2 60 L60 60 Z" fill="#0E0E0C"/>
+      <circle cx="60" cy="60" r="58" fill="none" stroke="#F2F1EC" stroke-width="2"/>
+      <circle cx="60" cy="60" r="9" fill="#C62F22"/>
+    </svg>
+    <p class="code" aria-hidden="true">404</p>
+    <span class="ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+    <span class="kick">Off the test track</span>
+    <h1>Nothing to crash-test here.</h1>
+    <p>No page lives at <code id="path">this address</code>. Check the link, or head back to the lab.</p>
+    <div class="actions">
+      <a class="primary" href="/">Back to home</a>
+      <a class="ghost" href="/#waitlist">Join the waitlist</a>
+    </div>
+  </section>
+</div></main>
+<script>
+  // Show the path that was asked for. textContent, never innerHTML: the URL is user input.
+  let shown = location.pathname;
+  try { shown = decodeURIComponent(shown); } catch (e) { /* malformed escapes: show it encoded */ }
+  document.getElementById("path").textContent = shown;
+</script>
+</body>
+</html>
