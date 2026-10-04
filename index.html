@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>breakyouragent: crash-test your AI agent</title>
-<meta name="description" content="Paste your agent's endpoint. We throw hundreds of jailbreaks, prompt injections and tool-abuse attacks at it and show you exactly where it breaks.">
+<meta name="description" content="Crash-test your AI agent. Paste its endpoint; we fire OWASP-mapped prompt injection, data-leak and tool-abuse attacks at it and show you exactly where it breaks. Uptime, database monitoring and recon in the same lab.">
 <meta property="og:title" content="breakyouragent: crash-test your AI agent">
 <meta property="og:description" content="Self-serve red-teaming for AI agents. OWASP-mapped. Free tier at launch.">
 <meta name="theme-color" content="#EDEDEA">
@@ -75,6 +75,7 @@ section.block{padding:120px 0}
 .head.split{flex-direction:row;justify-content:space-between;align-items:flex-end;gap:48px}
 .head.split p{max-width:420px;margin:0;font-size:18px;line-height:1.55;color:var(--muted)}
 .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
 .card{display:flex;flex-direction:column;gap:14px;padding:32px;background:var(--panel);border:1px solid var(--line);border-radius:14px}
 .alt .card{background:var(--panel)}
@@ -141,7 +142,7 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px}
 }
 @media (max-width:1000px){.hero,.report{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}.grid4{grid-template-columns:1fr 1fr}.head.split{flex-direction:column;align-items:flex-start}}
 @media (max-width:1000px){.hero-bleed::before{width:520px;right:-180px}}
-@media (max-width:640px){.hero-bleed::before{display:none}.cta{margin-block:72px;padding:64px 20px;border-radius:18px}.nav{flex-wrap:wrap;min-height:0;padding-block:16px;gap:12px}.nav nav{order:3;width:100%;gap:4px 20px;flex-wrap:wrap;font-size:15px}.nav nav a:not(.btn){display:inline-flex;align-items:center;min-height:44px}.nav nav a.btn{margin-left:auto;min-height:44px;padding:0 18px}.grid3,.grid4{grid-template-columns:1fr}.row{flex-direction:column}.gauge-row{flex-direction:column;align-items:stretch}.gauge{align-self:center}section.block{padding:80px 0}.hero{padding-block:64px}.panel{padding:24px}.term{font-size:13px}.term-body{padding:18px 16px}.line{flex-wrap:wrap;gap:2px 16px}}
+@media (max-width:640px){.hero-bleed::before{display:none}.cta{margin-block:72px;padding:64px 20px;border-radius:18px}.nav{flex-wrap:wrap;min-height:0;padding-block:16px;gap:12px}.nav nav{order:3;width:100%;gap:4px 20px;flex-wrap:wrap;font-size:15px}.nav nav a:not(.btn){display:inline-flex;align-items:center;min-height:44px}.nav nav a.btn{margin-left:auto;min-height:44px;padding:0 18px}.grid2,.grid3,.grid4{grid-template-columns:1fr}.row{flex-direction:column}.gauge-row{flex-direction:column;align-items:stretch}.gauge{align-self:center}section.block{padding:80px 0}.hero{padding-block:64px}.panel{padding:24px}.term{font-size:13px}.term-body{padding:18px 16px}.line{flex-wrap:wrap;gap:2px 16px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -152,7 +153,7 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px}
   <a class="logo" href="#top" aria-label="breakyouragent home">
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="2" y="2" width="24" height="24" stroke="#F5C400" stroke-width="2.5"/><path d="M14 2 L11 11 L17 15 L13 26" stroke="#F5C400" stroke-width="2.5" stroke-linejoin="bevel"/></svg>
     breakyouragent</a>
-  <nav><a href="#how">How it works</a><a href="#attacks">Attacks</a><a href="#report">Sample report</a><a class="btn" href="#waitlist">Join waitlist</a></nav>
+  <nav><a href="#how">How it works</a><a href="#attacks">Attacks</a><a href="#report">Sample report</a><a href="#lab">The lab</a><a class="btn" href="#waitlist">Join waitlist</a></nav>
 </div></header>
 
 <main id="top">
@@ -239,6 +240,19 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px}
     <div class="why"><h3>Neutral by design</h3><p>Not owned by a model lab or a firewall vendor. We test every stack the same way.</p></div>
     <div class="why"><h3>CI-ready</h3><p>One authenticated API call starts a run. Read the score back and fail the build when it drops.</p></div>
     <div class="why"><h3>Readable attack pack</h3><p>Every scenario is plain, OWASP-tagged YAML. You can see exactly what we sent your agent.</p></div>
+  </div>
+</div></section>
+
+<section id="lab" class="block"><div class="wrap">
+  <div class="head split"><div class="head" style="margin:0"><span class="ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="kicker">Also in the lab</span><h2>Watch what your agent stands on.</h2></div>
+  <p>An agent is only as steady as the APIs and databases behind it. Same account, same alerts, two more instruments.</p></div>
+  <div class="grid2">
+    <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg><span>HTTP · Postgres · MySQL · Redis</span></div><h3>Monitoring</h3>
+      <p>Uptime checks for the endpoints your agent calls. Database health read from the server's own statistics: active and slow queries, lock contention, dead tuples, replication slots, wraparound.</p>
+      <p>Alert rules on any metric post to Slack or a signed webhook. Probes connect as a read-only monitoring user and write nothing.</p></div>
+    <div class="card"><div class="tag"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6-6"/></svg><span>Passive first</span></div><h3>Recon</h3>
+      <p>The subdomains and links of your domain, from certificate transparency logs and web archives. Nothing touches your servers.</p>
+      <p>Prove you own the domain and the lab also crawls it and probes each host for its status code and title.</p></div>
   </div>
 </div></section>
 

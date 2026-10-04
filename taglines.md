@@ -76,3 +76,19 @@ These break the voice rules, kept here so nobody re-proposes them:
 - "Enterprise-grade AI security." — vendor noise, and we are not enterprise.
 - Anything calling the project "open source" — §9 has not chosen a licence, so no such grant exists.
 - "Unbreakable agents." — we cannot promise that; §7 of the terms says the opposite.
+
+## Features beyond agent testing  [added 2026-10-04]
+
+The product now also has monitoring (HTTP uptime; Postgres, MySQL/MariaDB and Redis health; alerts)
+and recon (passive subdomains and links; crawl after domain proof), folded in from the owner's
+Sentinel and ReconX projects. **The business tagline stays agent-first**, as the name says: the hero
+is still "Crash-test your AI agent." and the new features sit lower on the page in an "Also in the
+lab" section ("Watch what your agent stands on."). Rules for that copy:
+
+- Name only what exists. No uptime percentages, customer counts or speed claims.
+- Monitoring and recon support the agent story; they never replace it in the hero, the eyebrow or
+  the OG description.
+- Same competitor rule: no "X before Y" frame here either.
+
+The meta description also dropped "hundreds of jailbreaks": the pack has 22 scenarios, so the
+number was not true.
