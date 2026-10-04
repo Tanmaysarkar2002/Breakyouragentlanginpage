@@ -29,7 +29,6 @@ code{font:14px var(--mono);background:var(--panel);border:1px solid var(--line);
 .tag{display:inline-block;font:11px var(--mono);letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:3px;vertical-align:middle;margin-left:8px;white-space:nowrap}
 .tag.live{background:#E4F3E9;color:#14633A;border:1px solid #A9D6BC}
 .tag.planned{background:#FBF0C9;color:var(--accent-text);border:1px solid #E3CE7C}
-.todo{font:14px var(--mono);color:var(--accent-text);background:#FBF3D6;border:1px dashed #D8C167;border-radius:4px;padding:10px 12px;display:block;margin:0 0 16px;overflow-wrap:break-word}
 table{width:100%;border-collapse:collapse;font-size:16px;margin:0 0 24px}
 th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);color:var(--muted)}
 th{color:var(--text);font:13px var(--mono);letter-spacing:.5px;text-transform:uppercase}
@@ -58,12 +57,11 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--
   main{padding-block:0}
   a{color:#000;text-decoration:underline}
   a[href^="http"]::after,a[href^="mailto"]::after{content:" (" attr(href) ")";font-size:10px;color:#444;word-break:break-all}
-  .box,.box.warn,.todo,code,table{background:#fff;border-color:#bbb}
+  .box,.box.warn,code,table{background:#fff;border-color:#bbb}
   .box.warn strong{color:#000}
-  .todo{color:#000;border-style:dashed}
   .tag,.tag.live,.tag.planned{background:#fff;color:#000;border:1px solid #666}
   h1{font-size:26pt}h2{font-size:14pt;break-after:avoid}h3{break-after:avoid}
   p,li,td,th{font-size:10.5pt}
-  table,.box,.todo{break-inside:avoid}
+  table,.box{break-inside:avoid}
   .legal{color:#000}
 }
