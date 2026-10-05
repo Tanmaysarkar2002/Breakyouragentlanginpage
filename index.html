@@ -6,7 +6,7 @@
 <title>breakyouragent: crash-test your AI agent</title>
 <meta name="description" content="Crash-test your AI agent. Paste its endpoint; we fire OWASP-mapped prompt injection, data-leak and tool-abuse attacks at it and show you exactly where it breaks. Uptime, database monitoring and recon in the same lab.">
 <meta property="og:title" content="breakyouragent: crash-test your AI agent">
-<meta property="og:description" content="Self-serve red-teaming for AI agents. OWASP-mapped. Free tier at launch.">
+<meta property="og:description" content="Self-serve red-teaming for AI agents. OWASP-mapped. Card-required trial at launch.">
 <meta name="theme-color" content="#EDEDEA">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://breakyouragent.com/">
@@ -169,7 +169,7 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px}
     <form class="waitlist" action="#" method="post" novalidate data-source="hero">
       <label for="email-hero">Work email</label>
       <div class="row"><input id="email-hero" name="email" type="email" required autocomplete="email" placeholder="you@company.com"><input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="btn btn-accent" type="submit">Get early access</button></div>
-      <p class="note">Free tier at launch. No credit card. Only test agents you own. <a href="privacy.html">How we handle your email</a>.</p>
+      <p class="note">Card-required trial at launch. Only test agents you own or are authorized to test. <a href="privacy.html">How we handle your email</a>.</p>
       <noscript><p class="note" style="color:var(--accent-text)">Joining the waitlist needs JavaScript. Enable it, or reach us through the contact details on the terms page.</p></noscript>
     </form>
   </div>
@@ -189,12 +189,12 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px}
   </div>
 </div></div>
 
-<div class="proof"><div class="wrap"><span>Mapped to OWASP LLM Top 10</span><span>Mapped to OWASP Agentic Top 10</span><span>Free tier at launch</span><span>Any HTTP or OpenAI-compatible agent</span></div></div>
+<div class="proof"><div class="wrap"><span>Mapped to OWASP LLM Top 10</span><span>Mapped to OWASP Agentic Top 10</span><span>Trial at launch</span><span>Any HTTP or OpenAI-compatible agent</span></div></div>
 
 <section id="how" class="block"><div class="wrap">
   <div class="head"><span class="ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="kicker">How it works</span><h2>One URL in. A crash report out.</h2></div>
   <div class="grid3">
-    <div class="card"><span class="step-n">01</span><h3>Aim</h3><p>Paste your agent's endpoint and auth header. HTTP or OpenAI-compatible, no SDK and no code changes. Verify you own it in one click.</p></div>
+    <div class="card"><span class="step-n">01</span><h3>Aim</h3><p>Paste your agent's endpoint and auth header. HTTP or OpenAI-compatible, no SDK and no code changes. Confirm you are authorized to test it.</p></div>
     <div class="card"><span class="step-n">02</span><h3>Impact</h3><p>An attacker model mutates real-world scenarios and fires them at your agent, single-turn and multi-turn. Watch every hit land live.</p></div>
     <div class="card"><span class="step-n">03</span><h3>Teardown</h3><p>Pull the wreck apart: a resilience score, the exact transcript behind every failure, and the fix. Re-run it in CI on every deploy.</p></div>
   </div>
@@ -263,7 +263,7 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px}
 
 <section id="waitlist" class="wrap cta">
   <h2>Find the failure point<br>in the lab, not in production.</h2>
-  <p class="lede" style="margin:0">Join the waitlist for early access and a free full-suite run on launch day.</p>
+  <p class="lede" style="margin:0">Join the waitlist for early access when we launch.</p>
   <form class="waitlist" action="#" method="post" novalidate data-source="bottom">
     <label for="email-bottom">Work email</label>
     <div class="row"><input id="email-bottom" name="email" type="email" required autocomplete="email" placeholder="you@company.com"><input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="btn" type="submit">Get early access</button></div>

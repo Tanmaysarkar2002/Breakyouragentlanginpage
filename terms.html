@@ -30,7 +30,7 @@
 
 <main><div class="wrap">
   <h1>Terms of use</h1>
-  <p class="updated">Pre-launch &middot; last updated 4 October 2026</p>
+  <p class="updated">Pre-launch &middot; last updated 5 October 2026</p>
 
   <p class="lede">breakyouragent attacks AI agents on purpose. That only works if everyone using it points it at systems they are allowed to break.</p>
 
@@ -55,21 +55,21 @@
   </ul>
   <p>The engine, the attack pack and the hosted service are proprietary. All rights are reserved: using breakyouragent gives you no licence to copy, modify, redistribute or resell the software or the attack pack.</p>
 
-  <h2>4. Proving you own the endpoint <span class="tag planned">At launch</span></h2>
-  <p>Before the hosted service runs a full suite against a URL, you will have to prove you control it, by one of:</p>
+  <h2>4. Authorization <span class="tag planned">At launch</span></h2>
+  <p>You may only point breakyouragent at systems you own or are authorized to test.</p>
   <ul>
-    <li>serving a token at <code>/.well-known/breakyouragent.txt</code></li>
-    <li>a DNS TXT record of <code>breakyouragent-verify=&lt;token&gt;</code></li>
-    <li>echoing an <code>X-BYA-Challenge</code> header back to us</li>
+    <li><strong>Agents.</strong> When you add an agent you confirm that you own it or are authorized to test it. We record that confirmation, with your account and the time.</li>
+    <li><strong>Recon of a domain.</strong> Any domain gets passive recon, which only asks third parties such as certificate-transparency logs and web archives. Crawling the site or probing its subdomains needs proof that you control the domain: a DNS TXT record of <code>breakyouragent-verify=&lt;token&gt;</code>, or the token served at <code>/.well-known/breakyouragent.txt</code>. Proving a domain also covers its subdomains.</li>
+    <li><strong>Enterprise.</strong> Instead of the record, an Enterprise customer can sign a written authorization for its domains.</li>
   </ul>
-  <p>An unverified endpoint gets a three-prompt harmless connectivity check and nothing more.</p>
+  <p>Every scan is tied to a paying account (see section 5), and we keep the confirmation and the proof.</p>
 
   <h2>5. Limits <span class="tag planned">At launch</span></h2>
-  <p>Limits exist to protect your infrastructure as much as ours. Planned free-tier values:</p>
+  <p>There is no free tier. You can sign up and set things up for free, but runs, monitors and recon start only once you begin the trial, which needs a card up front, or sign an Enterprise agreement.</p>
+  <p>Limits exist to protect your infrastructure as much as ours. Planned values on every plan:</p>
   <div class="scroll"><table>
-    <thead><tr><th>Limit</th><th>Free tier</th></tr></thead>
+    <thead><tr><th>Limit</th><th>Every plan</th></tr></thead>
     <tbody>
-      <tr><td>Runs per day</td><td>3</td></tr>
       <tr><td>Concurrent requests to your agent</td><td>2</td></tr>
       <tr><td>Model tokens per run</td><td>1,000,000</td></tr>
       <tr><td>Request timeout</td><td>30 seconds</td></tr>
@@ -77,7 +77,7 @@
     </tbody>
   </table></div>
   <p>Do not try to route our traffic through the service at systems you do not control, and do not use it to load-test a third party. That is abuse, not testing.</p>
-  <p>Paid plans, their prices and their limits are shown before you subscribe. Payment is handled by Stripe; we never see or store your card details.</p>
+  <p>Each plan's daily runs, monitors and recon scans, its price and the trial length are shown before you subscribe. Payment is handled by Stripe; we never see or store your card details.</p>
 
   <h2>6. Your data <span class="tag planned">At launch</span></h2>
   <ul>
@@ -96,7 +96,7 @@
   <p>You are responsible for the systems you point breakyouragent at. You agree to indemnify us against claims, losses and costs arising from your testing of a system you were not authorized to test, or from your breach of these terms.</p>
 
   <h2>9. Suspension</h2>
-  <p>We may suspend or remove an account that tests endpoints it does not own, tries to bypass verification or the egress guard, attacks our own infrastructure, or uses the service to harm a third party. Where we can, we will tell you why.</p>
+  <p>We may suspend or remove an account that tests systems it is not authorized to test, tries to bypass domain proof or the egress guard, attacks our own infrastructure, or uses the service to harm a third party. Where we can, we will tell you why.</p>
 
   <h2>10. Contact</h2>
   <p>Security issues: <a href="mailto:security@breakyouragent.com">security@breakyouragent.com</a>. Everything else, including legal notices and requests to delete your data: <a href="mailto:contact@breakyouragent.com">contact@breakyouragent.com</a>.</p>

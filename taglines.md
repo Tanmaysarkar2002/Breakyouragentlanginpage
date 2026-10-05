@@ -45,7 +45,8 @@ Short enough to hold at 88px on one or two lines.
 ## Social / OG description
 
 - Paste your agent's endpoint. Get a resilience score and the transcript behind every failure.
-- Self-serve red-teaming for AI agents. OWASP-mapped. Free tier at launch.  *(current)*
+- Self-serve red-teaming for AI agents. OWASP-mapped. Card-required trial at launch.  *(current; the owner
+  dropped the free tier on 2026-10-04: every scan is tied to a paying account)*
 
 ## Off limits: the competitor collision  [added 2026-09-22]
 
