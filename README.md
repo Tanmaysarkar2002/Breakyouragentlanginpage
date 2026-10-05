@@ -4,7 +4,9 @@ Static pages, no build step, no dependencies. Hostable as-is on GitHub Pages.
 
 ```
 index.html                  landing page + inline CSS/JS
-terms.html                  terms of use (DRAFT, needs legal review)
+terms.html                  terms of use
+privacy.html                privacy notice (waitlist, EmailJS, fonts/CDN, localStorage)
+404.html                    not-found page, served for unknown paths
 legal.css                   stylesheet for terms.html
 taglines.md                 tagline candidates (not published)
 favicon.svg                 cracked-box mark
@@ -13,10 +15,11 @@ favicon.svg                 cracked-box mark
 functions/api/waitlist.js   Cloudflare Pages Function — INERT on GitHub Pages
 ```
 
-`terms.html` carries visible `[TODO: ...]` blocks for the legal entity, jurisdiction,
-liability terms, privacy policy and engine licence. It is marked "Draft, not yet in
-force" and must not go live until a lawyer has read it. It tags every claim as either live
-today or planned at launch, so nothing on it overstates what the engine actually does.
+`terms.html` and `privacy.html` carry no placeholders (owner decisions, 2026-10-04): governed by the
+laws of India, contact `contact@breakyouragent.com`, a proprietary licence, prices shown at Stripe
+checkout, and standard warranty, liability and indemnity wording. They still tag every claim as live
+today or planned at launch, so nothing overstates what the engine does. The operating entity is not
+named yet (owner: skip for now); have a lawyer read both pages before paid plans go live.
 
 ## Deploy on GitHub Pages
 
